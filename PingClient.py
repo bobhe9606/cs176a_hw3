@@ -39,7 +39,9 @@ if packetsRcvd > 0:
     minRtt = min(rttList)
     maxRtt = max(rttList)
     avgRtt = sum(rttList) / packetsRcvd
-    print("10 packets transmitted, {} received, {}% packet loss rtt min/avg/max = {} {} {} ms".format(packetsRcvd, packetsPercentLost, round(minRtt, 3), round(avgRtt, 3), round(maxRtt, 3)))
+    #Reference: https://stackoverflow.com/questions/1995615/how-can-i-format-a-decimal-to-always-show-2-decimal-places
+    print("10 packets transmitted, {} received, {}% packet loss rtt min/avg/max = {:.3f} {:.3f} {:.3f} ms".format(
+        packetsRcvd, packetsPercentLost, minRtt, avgRtt, maxRtt))
 else:
     print("10 packets transmitted, 0 received, 100% packet loss"); 
 
